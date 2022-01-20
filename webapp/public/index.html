@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app2"></div>
+    <script>
+      (function(w, d, s, q, i) {
+        w[q] = w[q] || [];
+
+        var f = d.getElementsByTagName(s)[0],j = d.createElement(s);
+        j.async = true;
+        j.id = 'beacon-aplus';
+
+        j.src = 'https://d.alicdn.com/alilog/mlog/aplus.js?id=202951085';
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'aplus_queue');
+
+        aplus_queue.push({
+          action: 'aplus.setMetaInfo',
+          arguments: ['aplus-rhost-v', 'alog.zjzwfw.gov.cn']
+        });
+
+        aplus_queue.push({
+          action: 'aplus.setMetaInfo',
+          arguments: ['aplus-rhost-g', 'alog.zjzwfw.gov.cn']
+        });
+
+        // 这个会落到app_key字段上
+        aplus_queue.push({
+          action: 'aplus.setMetaInfo',
+          arguments: ['appId', '60506758']
+        });
+
+        //  单⻚应⽤ 或 “单个⻚⾯”需异步补充PV⽇志参数还需进⾏如下埋点：
+        aplus_queue.push({
+          action: 'aplus.setMetaInfo',
+          arguments: ['aplus-waiting', 'MAN']
+        });
+
+
+        // // 单⻚应⽤路由切换后 或 在异步获取到pv⽇志所需的参数后再执⾏sendPV：
+        aplus_queue.push({
+          'action':'aplus.sendPV',
+          'arguments':[{
+            is_auto: false
+          },{
+            // ⾃定义PV参数key-value键值对（只能是这种平铺的json，不能做多层嵌套）， 如：
+            x: 111,
+            y: 222
+          }]
+        })
+
+      // 如采集⽤户信息是异步⾏为需要先执⾏这个BLOCK埋点
+     //  aplus_queue.push({
+     //      action: 'aplus.setMetaInfo',
+     //       arguments: ['_hold', 'BLOCK']
+     //      });
+     //       // 设置⽤户昵称
+     //        aplus_queue.push({
+     //            action: "aplus.setMetaInfo",
+     //            arguments: ["_user_nick", "当前会员⽤户昵称"]
+     //         });
+     //         // 设置⽤户ID
+     //         aplus_queue.push({
+     //              action: "aplus.setMetaInfo",
+     //               arguments: ["_user_id", "当前⽤户ID"]
+     //              });
+     //              aplus_queue.push({
+     //                   action: "aplus.setMetaInfo",
+     //                    arguments: ["_dev_id", "yourDeviceId"]
+     //                 });
+  // 如采集⽤户信息是异步⾏为，需要先设置完⽤户信息后再执⾏这个START埋点
+  // 此时被block住的⽇志会携带上⽤户信息逐条发出
+  //  aplus_queue.push({
+  //      action: 'aplus.setMetaInfo',
+  //      arguments: ['_hold', 'START']
+  //     });
+
+      aplus_queue.push({
+        'action':'aplus.sendPV',
+        'arguments':[{
+        is_auto: false
+        }, {
+          // ⾃定义PV参数key-value键值对（只能是这种平铺的json，不能做多层嵌套）， 如：
+          miniAppId:'1qafm03b+2001820920+kvuwea'
+        }]
+      })
+    //如采集⽤户信息是异步⾏为，需要先设置完⽤户信息后再执⾏这个START埋点
+    // 此时被block住的⽇志会携带上⽤户信息逐条发出
+    aplus_queue.push({
+      action: 'aplus.setMetaInfo',
+      arguments: ['_hold', 'START']
+    });
+
+    var img = new Image()
+    img.src = 'https://alog.zjzwfw.gov.cn/m.gif'
+    </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

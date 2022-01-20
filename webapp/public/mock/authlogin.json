@@ -1,0 +1,13 @@
+{
+  "success":true,
+  "code":200,
+  "message":"",
+  "result":{
+    "uid": 2,
+    "arvatar": "",
+    "realname": "金晓聪",
+    "idcard": "330324199408160011",
+    "phone": "18757382422",
+    "token": ""
+  }
+}
