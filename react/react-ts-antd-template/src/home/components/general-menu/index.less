@@ -1,0 +1,42 @@
+.general-menu-container {
+  flex: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  .sub-menu-label {
+    display: flex;
+    align-items: center;
+    .menu-name {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .menu-left-icon {
+    display: inline-block;
+    margin-right: 9px;
+    line-height: 14px;
+    &, &>img {
+      width: 16px!important;
+      height: 16px!important;
+      vertical-align: middle;
+    }
+  }
+}
+
+.arrow-icon {
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  top: 19px;
+  right: 16px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+  transition: transform .3s;
+  &.opened {
+    transform: rotate(45deg);
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "node-db-test",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.5"
+  }
+}

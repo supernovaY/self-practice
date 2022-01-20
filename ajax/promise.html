@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="testGet()"></button>
+    <button onclick="testPost()"></button>
+    <button onclick="testPut()"></button>
+    <button onclick="testDelete()"></button>
+<script>
+new Promise((resolve,reject) => {
+    setTimeout( ()=>{
+        resolve('成功') //后改变状态 同时指定数据，在异步执行回调函数
+    },0);
+}).then(//一般情况下是先指定回调函数,保存当前指定的回调函数
+    (value) => {
+        console.log('111' + value)},
+).catch(
+    reason => {
+        console.log(reason)
+    }
+)
+</script>
+</body>
+</html>
